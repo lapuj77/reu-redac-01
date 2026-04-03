@@ -28,14 +28,14 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    --jdg:       #8E1050;
-    --jdg-dark:  #5C0835;
-    --jdg-mid:   #B01D65;
-    --jdg-light: #F7EBF2;
-    --jdg-pale:  #FDF5F9;
-    --jdg-border:#E5C5D5;
+    --jdg:       #E8000D;
+    --jdg-dark:  #B50009;
+    --jdg-mid:   #FF3340;
+    --jdg-light: #FFF0F0;
+    --jdg-pale:  #FFF8F8;
+    --jdg-border:#FFCCCC;
     --radius:    12px;
-    --shadow:    0 2px 12px rgba(142,16,80,.10);
+    --shadow:    0 2px 12px rgba(232,0,13,.10);
 }
 
 /* ── Police globale ── */
@@ -44,12 +44,12 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
 }
 
 /* ── Fond ── */
-.main, [data-testid="stAppViewContainer"] { background: #F4F0F3 !important; }
+.main, [data-testid="stAppViewContainer"] { background: #F5F0F0 !important; }
 [data-testid="stAppViewContainer"] > .main { padding-top: 0 !important; }
 
 /* ── Sidebar ── */
 [data-testid="stSidebar"] {
-    background: linear-gradient(175deg, #3D0525 0%, #7A0E44 60%, #9E1558 100%) !important;
+    background: linear-gradient(175deg, #6B0004 0%, #AA0009 60%, #CC000E 100%) !important;
     border-right: none !important;
 }
 [data-testid="stSidebar"] > div { padding-top: 1.5rem; }
@@ -76,26 +76,30 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
 /* Boutons sidebar */
 [data-testid="stSidebar"] .stButton button {
     background: #fff !important;
-    color: #8E1050 !important; font-weight: 700 !important;
-    border: 2px solid rgba(255,255,255,0.6) !important;
+    color: #B50009 !important; font-weight: 700 !important;
+    border: 2px solid #fff !important;
     border-radius: 8px !important;
     width: 100%; margin-top: .2rem;
     transition: all .15s;
 }
 [data-testid="stSidebar"] .stButton button:hover {
-    background: #f7ebf2 !important; color: #5C0835 !important;
+    background: #fff0f0 !important; color: #8B0009 !important;
+    border-color: #ffcccc !important;
 }
+[data-testid="stSidebar"] .stButton button *,
 [data-testid="stSidebar"] .stButton button p,
 [data-testid="stSidebar"] .stButton button span,
-[data-testid="stSidebar"] .stButton button div {
-    color: #8E1050 !important; font-weight: 700 !important;
+[data-testid="stSidebar"] .stButton button div,
+[data-testid="stSidebar"] .stButton button label {
+    color: #B50009 !important; font-weight: 700 !important;
+    background: transparent !important;
 }
 /* Bouton "Browse files" du file uploader */
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button span,
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button p {
     background: #fff !important;
-    color: #8E1050 !important; font-weight: 600 !important;
+    color: #E8000D !important; font-weight: 600 !important;
     border: 1px solid rgba(255,255,255,0.5) !important;
     border-radius: 6px !important;
 }
@@ -124,7 +128,7 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
 }
 [data-testid="stTabs"] [aria-selected="true"] {
     background: var(--jdg) !important; color: #fff !important;
-    box-shadow: 0 2px 8px rgba(142,16,80,.3) !important;
+    box-shadow: 0 2px 8px rgba(232,0,13,.3) !important;
 }
 
 /* ── Cartes KPI ── */
@@ -143,7 +147,7 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
 }
 .kpi-icon { font-size:1.4rem; margin-bottom:.3rem; }
 .kpi-val  { font-size:1.65rem; font-weight:800; color:var(--jdg); line-height:1.1; }
-.kpi-lbl  { font-size:.72rem; font-weight:600; color:#7B4060; text-transform:uppercase; letter-spacing:.6px; margin-top:.25rem; }
+.kpi-lbl  { font-size:.72rem; font-weight:600; color:#8B0009; text-transform:uppercase; letter-spacing:.6px; margin-top:.25rem; }
 
 /* ── Cartes articles top/flop ── */
 .art-card {
@@ -157,7 +161,7 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
 .art-rank { font-weight:800; font-size:.8rem; min-width:52px; }
 .art-rank.top  { color:#16a34a; }
 .art-rank.flop { color:#dc2626; }
-.art-title { color:#1a0a12; line-height:1.35; flex:1; }
+.art-title { color:#1a0000; line-height:1.35; flex:1; }
 
 /* ── Titres de section ── */
 h3 { color: var(--jdg-dark) !important; font-weight:800 !important; }
@@ -185,7 +189,7 @@ div[data-testid="stDataFrame"] {
     border-radius: 8px !important; border-color: var(--jdg-border) !important;
 }
 .stTextInput input:focus, .stTextArea textarea:focus {
-    border-color: var(--jdg) !important; box-shadow: 0 0 0 3px rgba(142,16,80,.12) !important;
+    border-color: var(--jdg) !important; box-shadow: 0 0 0 3px rgba(232,0,13,.12) !important;
 }
 
 /* ── Expander ── */
@@ -497,7 +501,7 @@ Sur la base de ces données, propose **10 idées d'articles concrets** pour la s
 - Indique la **catégorie** et le **format recommandé** (article, test, critique, dossier, bon plan)
 - Priorise les sujets qui ont bien performé cette semaine
 - Exploite les événements à venir quand c'est pertinent
-- Adopte le ton JDG : direct, geek-friendly, un peu décalé
+- Adopte le ton 01net : direct, tech-focused, expert mais accessible
 
 Format de réponse : liste numérotée, une idée par ligne."""
 
@@ -648,10 +652,13 @@ def load_archive_summaries() -> pd.DataFrame:
                 df_a = load_data(os.path.join(ARCHIVE_DIR, fname))
 
             m = re.search(r"(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})", fname)
-            w_s = m.group(1) if m else fname
-            w_e = m.group(2) if m else fname
-            d_s = datetime.strptime(w_s, "%Y-%m-%d")
-            d_e = datetime.strptime(w_e, "%Y-%m-%d")
+            if m:
+                d_s = datetime.strptime(m.group(1), "%Y-%m-%d")
+                d_e = datetime.strptime(m.group(2), "%Y-%m-%d")
+            else:
+                d_s = df_a["Date"].min().to_pydatetime()
+                d_e = df_a["Date"].max().to_pydatetime()
+            w_s = d_s.strftime("%Y-%m-%d")
             nb_jours = (d_e - d_s).days
 
             is_monthly = nb_jours > 20
@@ -746,7 +753,7 @@ def gh_delete_archive(filename: str):
 # ─────────────────────────────────────────────
 # SIDEBAR
 # ─────────────────────────────────────────────
-LOGO_PATH = os.path.join(os.path.dirname(__file__), "logo-jdg.jpg")
+LOGO_PATH = os.path.join(os.path.dirname(__file__), "logo-01net.png")
 
 
 def logo_b64() -> str:
@@ -788,16 +795,16 @@ if _stored_pw and not st.session_state.get("authenticated"):
         if _logo:
             st.markdown(
                 f"<div style='text-align:center;padding:3rem 0 1.5rem;'>"
-                f"<img src='data:image/jpeg;base64,{_logo}' "
-                f"style='width:110px;border-radius:16px;box-shadow:0 6px 24px rgba(142,16,80,.25);'>"
+                f"<img src='data:image/png;base64,{_logo}' "
+                f"style='width:110px;border-radius:16px;box-shadow:0 6px 24px rgba(232,0,13,.25);'>"
                 f"</div>",
                 unsafe_allow_html=True,
             )
         st.markdown(
-            "<h2 style='text-align:center;color:#8E1050;font-weight:800;"
+            "<h2 style='text-align:center;color:#E8000D;font-weight:800;"
             "margin-bottom:0.3rem;'>Dashboard Rédaction</h2>"
             "<p style='text-align:center;color:#999;font-size:.85rem;"
-            "margin-bottom:1.8rem;'>Journal du Geek — accès réservé</p>",
+            "margin-bottom:1.8rem;'>01net — accès réservé</p>",
             unsafe_allow_html=True,
         )
         with st.form("login_form"):
@@ -821,7 +828,7 @@ with st.sidebar:
     if _logo:
         st.markdown(
             f"<div style='text-align:center;padding:.5rem 0 1rem;'>"
-            f"<img src='data:image/jpeg;base64,{_logo}' style='width:90px;border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,.3);'>"
+            f"<img src='data:image/png;base64,{_logo}' style='width:90px;border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,.3);'>"
             f"</div>",
             unsafe_allow_html=True,
         )
@@ -830,24 +837,18 @@ with st.sidebar:
     # File upload
     st.markdown("### 📂 Fichier de la semaine")
     uploaded = st.file_uploader("Importer un nouveau CSV", type=["csv"])
-
-    # Auto-detect Dropbox files
-    dropbox_files: list[str] = []
-    if os.path.isdir(DROPBOX_PATH):
-        dropbox_files = sorted(
-            [f for f in os.listdir(DROPBOX_PATH) if f.startswith("Auteur_") and f.endswith(".csv")],
-            reverse=True,
-        )
-    dropbox_choice = None
-    if not uploaded and dropbox_files:
-        dropbox_choice = st.selectbox("Ou choisir depuis Dropbox", dropbox_files)
+    if uploaded:
+        st.cache_data.clear()
+    if st.button("🗑️ Vider le cache", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
 
     # Archives
     archived_files = gh_list_archives() if _is_cloud() else sorted(
         [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".csv")], reverse=True
     )
     archive_choice = None
-    if not uploaded and not dropbox_choice and archived_files:
+    if not uploaded and archived_files:
         st.markdown("### 🗂️ Semaines archivées")
         archive_choice = st.selectbox(
             "Charger une semaine précédente",
@@ -855,58 +856,6 @@ with st.sidebar:
         )
         if archive_choice == "— Sélectionner —":
             archive_choice = None
-    elif not uploaded and archived_files:
-        st.markdown("### 🗂️ Semaines archivées")
-        archive_choice = st.selectbox(
-            "Ou charger une semaine précédente",
-            ["— Sélectionner —"] + archived_files,
-        )
-        if archive_choice == "— Sélectionner —":
-            archive_choice = None
-
-    st.markdown("---")
-    st.markdown("### 🔑 Clés API")
-
-    tmdb_key = st.text_input(
-        "TMDB — Ciné & Séries",
-        value=_config.get("tmdb_key", ""),
-        type="password",
-        help="Gratuit sur themoviedb.org",
-    )
-    rawg_key = st.text_input(
-        "RAWG — Jeux Vidéo",
-        value=_config.get("rawg_key", ""),
-        type="password",
-        help="Gratuit sur rawg.io/apidocs",
-    )
-
-    _on_cloud = _is_cloud()
-    _keys_changed = not _on_cloud and (
-        tmdb_key != _config.get("tmdb_key", "") or
-        rawg_key != _config.get("rawg_key", "")
-    )
-    if _on_cloud:
-        st.markdown(
-            "<div style='color:rgba(255,255,255,0.7);font-size:.8rem;'>🔒 Clés gérées via Streamlit Secrets</div>",
-            unsafe_allow_html=True,
-        )
-    elif _keys_changed:
-        st.markdown(
-            "<div style='background:rgba(255,200,100,0.2);border:1px solid rgba(255,200,100,0.5);"
-            "border-radius:8px;padding:.4rem .7rem;font-size:.8rem;color:#fff;margin-bottom:.4rem;'>"
-            "⚠️ Clés modifiées — pensez à sauvegarder</div>",
-            unsafe_allow_html=True,
-        )
-        if st.button("💾 Sauvegarder les clés"):
-            save_config({"tmdb_key": tmdb_key, "rawg_key": rawg_key})
-            st.rerun()
-    else:
-        saved_any = _config.get("tmdb_key") or _config.get("rawg_key")
-        if saved_any:
-            st.markdown(
-                "<div style='color:rgba(255,255,255,0.7);font-size:.8rem;'>✅ Clés sauvegardées</div>",
-                unsafe_allow_html=True,
-            )
 
     st.markdown("---")
 
@@ -928,11 +877,6 @@ elif archive_choice:
     else:
         df = load_data(os.path.join(ARCHIVE_DIR, archive_choice))
     filename = archive_choice
-elif dropbox_choice:
-    fpath = os.path.join(DROPBOX_PATH, dropbox_choice)
-    auto_archive(fpath, dropbox_choice)
-    df = load_data(fpath)
-    filename = dropbox_choice
 
 # ─────────────────────────────────────────────
 # LANDING PAGE (no file)
@@ -962,13 +906,14 @@ if df is None:
 # ─────────────────────────────────────────────
 w_start, w_end = week_dates(filename, df)
 next_monday = (datetime.strptime(w_end, "%Y-%m-%d") + timedelta(days=2)).strftime("%d/%m/%Y")
+is_monthly_file = (datetime.strptime(w_end, "%Y-%m-%d") - datetime.strptime(w_start, "%Y-%m-%d")).days > 20
 
-_logo_tag = f"<img src='data:image/jpeg;base64,{_logo}' style='height:52px;border-radius:9px;margin-right:1rem;vertical-align:middle;box-shadow:0 2px 8px rgba(0,0,0,.2);'>" if _logo else ""
-st.markdown(
+_logo_tag = f"<img src='data:image/png;base64,{_logo}' style='height:52px;border-radius:9px;margin-right:1rem;vertical-align:middle;box-shadow:0 2px 8px rgba(0,0,0,.2);'>" if _logo else ""
+st.html(
     f"""<div style='
-        background: linear-gradient(135deg, #5C0835 0%, #9E1558 100%);
+        background: linear-gradient(135deg, #B50009 0%, #E8000D 100%);
         border-radius: 16px; padding: 1.4rem 2rem; margin-bottom: 1.5rem;
-        box-shadow: 0 4px 20px rgba(92,8,53,.3);
+        box-shadow: 0 4px 20px rgba(181,0,9,.3);
         display:flex; align-items:center; gap:0;
     '>
         {_logo_tag}
@@ -982,13 +927,18 @@ st.markdown(
                 &nbsp;·&nbsp; Réunion lundi <b style='color:#fff;'>{next_monday}</b>
             </div>
         </div>
-    </div>""",
-    unsafe_allow_html=True,
+    </div>"""
 )
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(
-    ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "📅 Planning semaine", "🗂️ Historique"]
-)
+if is_monthly_file:
+    tab1, tab2, tab3, tab5 = st.tabs(
+        ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "🗂️ Historique"]
+    )
+    tab4 = None
+else:
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(
+        ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "📅 Planning semaine", "🗂️ Historique"]
+    )
 
 # ─────────────────────────────────────────────
 # TAB 1 — VUE D'ENSEMBLE
@@ -1014,7 +964,7 @@ with tab1:
     )
     st.markdown(f"<div class='kpi-grid'>{cards_html}</div>", unsafe_allow_html=True)
     st.markdown(
-        f"<p style='font-size:.85rem;color:#7B4060;margin-top:-.5rem;margin-bottom:1rem;'>"
+        f"<p style='font-size:.85rem;color:#8B0009;margin-top:-.5rem;margin-bottom:1rem;'>"
         f"🏆 <i>{top_row['Titre'][:90]}</i> — {top_row['Rédacteur']}</p>",
         unsafe_allow_html=True,
     )
@@ -1032,7 +982,7 @@ with tab1:
         fig = px.bar(
             author_vues, x="Vues", y="Rédacteur", orientation="h",
             title="Vues totales par rédacteur",
-            color="Vues", color_continuous_scale=["#F9ECF2", "#C4316B", "#5C0835"],
+            color="Vues", color_continuous_scale=["#FFE5E5", "#E8000D", "#8B0009"],
             labels={"Vues": "Vues totales", "Rédacteur": ""},
         )
         fig.update_layout(coloraxis_showscale=False, height=420, margin=dict(l=0))
@@ -1063,7 +1013,7 @@ with tab1:
     fig3 = px.area(
         daily, x="Jour", y="Vues",
         title="Vues par jour (lundi → dimanche)",
-        color_discrete_sequence=["#8E1050"],
+        color_discrete_sequence=["#E8000D"],
         markers=True,
     )
     fig3.update_layout(height=240, margin=dict(t=40, b=20))
@@ -1077,59 +1027,6 @@ with tab1:
     top10 = top10.rename(columns={"Type_Label": "Format"})
     st.dataframe(top10.reset_index(drop=True), use_container_width=True, hide_index=True)
 
-    # Top 3 par format éditorial
-    st.markdown("### 🎯 Top 3 par format éditorial")
-    col_cr, col_te, col_do = st.columns(3)
-
-    MEDAL_COLORS = ["#F59E0B", "#94A3B8", "#B45309"]
-
-    def format_top3_cards(subset):
-        medals = ["🥇", "🥈", "🥉"]
-        cards = ""
-        for i, (_, row) in enumerate(subset.head(3).iterrows()):
-            titre_full = row["Titre"]
-            titre = titre_full[:65] + ("…" if len(titre_full) > 65 else "")
-            color = MEDAL_COLORS[i]
-            url = get_article_url(titre_full)
-            titre_html = (
-                f"<a href='{url}' target='_blank' style='color:#1a0a12;text-decoration:none;"
-                f"border-bottom:1px dotted #8E1050;'>{titre}</a>"
-                if url else titre
-            )
-            cards += (
-                f"<div style='background:#fff;border:1px solid #E5C5D5;border-left:4px solid {color};"
-                f"border-radius:10px;padding:.65rem .9rem;margin:.3rem 0;'>"
-                f"<div style='font-size:.95rem;line-height:1;margin-bottom:.25rem;'>{medals[i]}"
-                f"&nbsp;<span style='font-weight:800;color:#8E1050;'>{fmt(row['Vues'])} vues</span></div>"
-                f"<div style='font-size:.82rem;color:#1a0a12;line-height:1.35;margin-bottom:.2rem;'>{titre_html}</div>"
-                f"<div style='font-size:.75rem;color:#7B4060;'>✍️ {row['Rédacteur']}</div>"
-                f"</div>"
-            )
-        return cards
-
-    with col_cr:
-        st.markdown("#### ✍️ Critiques")
-        critiques = df[df["Type"] == "critique"].sort_values("Vues", ascending=False)
-        if len(critiques):
-            st.markdown(format_top3_cards(critiques), unsafe_allow_html=True)
-        else:
-            st.caption("Aucune critique cette semaine.")
-
-    with col_te:
-        st.markdown("#### 🔬 Tests")
-        tests = df[df["Type"] == "test"].sort_values("Vues", ascending=False)
-        if len(tests):
-            st.markdown(format_top3_cards(tests), unsafe_allow_html=True)
-        else:
-            st.caption("Aucun test cette semaine.")
-
-    with col_do:
-        st.markdown("#### 📂 Dossiers")
-        dossiers = df[df["Type"] == "dossier"].sort_values("Vues", ascending=False)
-        if len(dossiers):
-            st.markdown(format_top3_cards(dossiers), unsafe_allow_html=True)
-        else:
-            st.caption("Aucun dossier cette semaine.")
 
 # ─────────────────────────────────────────────
 # TAB 2 — STATS PAR AUTEUR
@@ -1189,10 +1086,13 @@ with tab2:
             st.markdown(f"#### ✍️ {author}")
             st.caption(f"{nb} articles · {fmt(total)} vues · moy. {fmt(avg)}")
 
+            top5 = adf.head(5)
+            flops = adf[~adf.index.isin(top5.index)].tail(5)
+
             c_top, c_flop = st.columns(2)
             with c_top:
                 st.markdown("**🟢 Top 5**")
-                for rank, (_, row) in enumerate(adf.head(5).iterrows(), 1):
+                for rank, (_, row) in enumerate(top5.iterrows(), 1):
                     titre = row["Titre"][:62] + ("…" if len(row["Titre"]) > 62 else "")
                     st.markdown(
                         f'<div class="art-card top">'
@@ -1202,14 +1102,17 @@ with tab2:
                     )
             with c_flop:
                 st.markdown("**🔴 Flops**")
-                for rank, (_, row) in enumerate(adf.tail(min(5, nb)).iterrows(), 1):
-                    titre = row["Titre"][:62] + ("…" if len(row["Titre"]) > 62 else "")
-                    st.markdown(
-                        f'<div class="art-card flop">'
-                        f'<span class="art-rank flop">↓{fmt(row["Vues"])}</span>'
-                        f'<span class="art-title">{titre}</span></div>',
-                        unsafe_allow_html=True,
-                    )
+                if flops.empty:
+                    st.caption("Pas assez d'articles.")
+                else:
+                    for rank, (_, row) in enumerate(flops.iterrows(), 1):
+                        titre = row["Titre"][:62] + ("…" if len(row["Titre"]) > 62 else "")
+                        st.markdown(
+                            f'<div class="art-card flop">'
+                            f'<span class="art-rank flop">↓{fmt(row["Vues"])}</span>'
+                            f'<span class="art-title">{titre}</span></div>',
+                            unsafe_allow_html=True,
+                        )
             st.markdown("---")
 
 # ─────────────────────────────────────────────
@@ -1277,138 +1180,100 @@ with tab3:
     st.markdown("---")
     st.markdown("### 📆 Production quotidienne")
 
-    # Production quotidienne — 7 jours lundi→dimanche complets
-    week_monday2 = datetime.strptime(w_start, "%Y-%m-%d")
-    week_monday2 -= timedelta(days=week_monday2.weekday())
-    all_days2 = pd.DataFrame({
-        "Date": [week_monday2.date() + timedelta(days=i) for i in range(7)]
-    })
-    daily_count_raw = df.groupby(df["Date"].dt.date).size().reset_index(name="Articles")
-    daily_count_raw.columns = ["Date", "Articles"]
-    daily_count = all_days2.merge(daily_count_raw, on="Date", how="left").fillna(0)
-    daily_count["Articles"] = daily_count["Articles"].astype(int)
-    daily_count["Jour"] = daily_count["Date"].apply(lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m"))
+    # Détection mode mensuel
+    _d_start = datetime.strptime(w_start, "%Y-%m-%d")
+    _d_end   = datetime.strptime(w_end,   "%Y-%m-%d")
+    is_monthly = (_d_end - _d_start).days > 20
+
+    if is_monthly:
+        # Tous les jours du mois
+        nb_days = (_d_end.date() - _d_start.date()).days + 1
+        all_days2 = pd.DataFrame({
+            "Date": [_d_start.date() + timedelta(days=i) for i in range(nb_days)]
+        })
+        daily_count_raw = df.groupby(df["Date"].dt.date).size().reset_index(name="Articles")
+        daily_count_raw.columns = ["Date", "Articles"]
+        daily_count = all_days2.merge(daily_count_raw, on="Date", how="left").fillna(0)
+        daily_count["Articles"] = daily_count["Articles"].astype(int)
+        daily_count["Jour"] = daily_count["Date"].apply(lambda d: d.strftime("%d/%m"))
+        bar_title = f"Articles publiés par jour ({_d_start.strftime('%d/%m')} → {_d_end.strftime('%d/%m/%Y')})"
+    else:
+        # 7 jours lundi→dimanche complets
+        week_monday2 = _d_start - timedelta(days=_d_start.weekday())
+        all_days2 = pd.DataFrame({
+            "Date": [week_monday2.date() + timedelta(days=i) for i in range(7)]
+        })
+        daily_count_raw = df.groupby(df["Date"].dt.date).size().reset_index(name="Articles")
+        daily_count_raw.columns = ["Date", "Articles"]
+        daily_count = all_days2.merge(daily_count_raw, on="Date", how="left").fillna(0)
+        daily_count["Articles"] = daily_count["Articles"].astype(int)
+        daily_count["Jour"] = daily_count["Date"].apply(lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m"))
+        bar_title = "Nombre d'articles publiés par jour (lundi → dimanche)"
 
     fig_daily = px.bar(
         daily_count, x="Jour", y="Articles",
-        title="Nombre d'articles publiés par jour (lundi → dimanche)",
+        title=bar_title,
         labels={"Jour": "", "Articles": "Articles"},
         color="Articles",
-        color_continuous_scale=["#F7EBF2", "#C4316B", "#5C0835"],
+        color_continuous_scale=["#FFE5E5", "#E8000D", "#8B0009"],
         text="Articles",
     )
     fig_daily.update_traces(textposition="outside")
     fig_daily.update_layout(showlegend=False, coloraxis_showscale=False, height=300, margin=dict(t=40, b=10))
     st.plotly_chart(fig_daily, use_container_width=True)
 
-    # Nombre de contenus par rédacteur par jour (heatmap)
+    # Heatmap articles par rédacteur par jour
     st.markdown("#### ✍️ Articles par rédacteur par jour")
-    df["Jour_label"] = df["Date"].apply(
-        lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m")
-    )
-    # Colonnes ordonnées lundi→dimanche
     ordered_cols = daily_count["Jour"].tolist()
+    if is_monthly:
+        df["Jour_label"] = df["Date"].apply(lambda d: d.strftime("%d/%m"))
+    else:
+        df["Jour_label"] = df["Date"].apply(
+            lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m")
+        )
     pivot_redac = df.pivot_table(
         values="Titre", index="Rédacteur", columns="Jour_label",
         aggfunc="count", fill_value=0,
     ).reindex(columns=ordered_cols, fill_value=0)
+    heat_height = max(380, len(pivot_redac) * 40) if is_monthly else 380
     fig_heat = px.imshow(
         pivot_redac,
         text_auto=True,
-        color_continuous_scale=["#FDF5F9", "#C4316B", "#5C0835"],
+        color_continuous_scale=["#FFE5E5", "#E8000D", "#8B0009"],
         aspect="auto",
         labels={"x": "", "y": "", "color": "Articles"},
     )
-    fig_heat.update_layout(height=380, margin=dict(t=10, b=10))
+    fig_heat.update_layout(height=heat_height, margin=dict(t=10, b=10))
     fig_heat.update_coloraxes(showscale=False)
     st.plotly_chart(fig_heat, use_container_width=True)
 
 # ─────────────────────────────────────────────
 # TAB 4 — PLANNING
 # ─────────────────────────────────────────────
-with tab4:
-    nw_start = datetime.strptime(w_end, "%Y-%m-%d") + timedelta(days=2)
-    nw_end = nw_start + timedelta(days=6)
+if tab4 is not None:
+    with tab4:
+        nw_start = datetime.strptime(w_end, "%Y-%m-%d") + timedelta(days=2)
+        nw_end = nw_start + timedelta(days=6)
 
-    st.markdown(
-        f"### 📅 Semaine du {nw_start.strftime('%d/%m/%Y')} au {nw_end.strftime('%d/%m/%Y')}"
-    )
-    st.markdown("---")
-
-    col_left, col_right = st.columns(2)
-
-    # ── Ciné / Streaming ──
-    with col_left:
-        st.markdown("#### 🎬 Sorties Ciné & Streaming")
-        if tmdb_key:
-            with st.spinner("Chargement TMDB…"):
-                releases = get_tmdb_releases(tmdb_key)
-            if releases.get("error"):
-                st.error(f"Erreur TMDB : {releases['error']}")
-            elif releases["movies"]:
-                for m in releases["movies"]:
-                    rd = datetime.strptime(m["date"], "%Y-%m-%d").strftime("%d/%m") if m["date"] else "?"
-                    note = f" · ⭐ {m['note']:.1f}" if m["note"] else ""
-                    st.markdown(f"**{m['title']}** — {rd}{note}")
-            else:
-                st.info("Aucune sortie ciné trouvée.")
-
-            if releases["tv"]:
-                st.markdown("#### 📺 Séries en cours")
-                for s in releases["tv"]:
-                    st.markdown(f"• {s['title']}")
-        else:
-            st.info(
-                "💡 Ajoutez une clé API TMDB (gratuite) pour afficher "
-                "les sorties automatiquement."
-            )
-            st.markdown("**Sorties à couvrir :**")
-            for i in range(4):
-                cc, cd = st.columns([3, 1])
-                cc.text_input(f"Titre {i+1}", key=f"t{i}", placeholder="Film / Série…", label_visibility="collapsed")
-                cd.text_input(f"Date {i+1}", key=f"d{i}", placeholder="jj/mm", label_visibility="collapsed")
-
+        st.markdown(
+            f"### 📅 Semaine du {nw_start.strftime('%d/%m/%Y')} au {nw_end.strftime('%d/%m/%Y')}"
+        )
         st.markdown("---")
-        st.markdown("#### 🎮 Sorties Jeux Vidéo")
-        if rawg_key:
-            with st.spinner("Chargement RAWG…"):
-                games, games_err = get_game_releases(
-                    rawg_key,
-                    nw_start.strftime("%Y-%m-%d"),
-                    nw_end.strftime("%Y-%m-%d"),
-                )
-            if games_err:
-                st.error(f"Erreur RAWG : {games_err}")
-            elif games:
-                for g in games:
-                    rd = datetime.strptime(g["date"], "%Y-%m-%d").strftime("%d/%m") if g["date"] else "?"
-                    plats = " · ".join(g["platforms"][:3]) if g["platforms"] else ""
-                    rating = f" ⭐ {g['rating']:.1f}" if g["rating"] else ""
-                    st.markdown(f"**{g['title']}** — {rd}{rating}")
-                    if plats:
-                        st.caption(plats)
-            else:
-                st.info("Aucune sortie jeu trouvée pour cette semaine.")
-        else:
-            st.info("💡 Ajoutez une clé RAWG (gratuite sur rawg.io) pour les sorties auto.")
-            st.text_area("Notes jeux", placeholder="- Titre — date\n- DLC / patch majeur", height=100, label_visibility="collapsed", key="jv_manual")
 
-    # ── Tech & Tendances ──
-    with col_right:
         # ── Calendrier événements ──
         st.markdown("#### 📅 Événements Tech & Gaming")
         events = get_upcoming_events(nw_start.strftime("%Y-%m-%d"), lookahead_days=14)
         if events:
             for ev in events:
                 date_range = ev["start"] if ev["same_day"] else f"{ev['start']} → {ev['end']}"
-                badge_color = "#dc2626" if ev["urgent"] else "#8E1050"
+                badge_color = "#dc2626" if ev["urgent"] else "#E8000D"
                 badge = f"<span style='background:{badge_color};color:#fff;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;margin-left:.4rem;'>{ev['label']}</span>"
-                title_html = f"<a href='{ev['url']}' target='_blank' style='color:#8E1050;font-weight:700;text-decoration:none;'>{ev['name']}</a>" if ev["url"] else f"<b>{ev['name']}</b>"
+                title_html = f"<a href='{ev['url']}' target='_blank' style='color:#E8000D;font-weight:700;text-decoration:none;'>{ev['name']}</a>" if ev["url"] else f"<b>{ev['name']}</b>"
                 st.markdown(
-                    f"<div style='background:#fff;border:1px solid #E5C5D5;border-radius:10px;padding:.6rem .9rem;margin:.3rem 0;'>"
+                    f"<div style='background:#fff;border:1px solid #FFCCCC;border-radius:10px;padding:.6rem .9rem;margin:.3rem 0;'>"
                     f"<div style='display:flex;justify-content:space-between;align-items:center;'>"
                     f"<span>{title_html}{badge}</span>"
-                    f"<span style='font-size:.78rem;color:#7B4060;font-weight:600;'>{date_range}</span>"
+                    f"<span style='font-size:.78rem;color:#8B0009;font-weight:600;'>{date_range}</span>"
                     f"</div>"
                     f"<div style='font-size:.78rem;color:#666;margin-top:.15rem;'>{ev['cat']} &nbsp;·&nbsp; {ev['desc']}</div>"
                     f"</div>",
@@ -1422,10 +1287,10 @@ with tab4:
             tech_news = get_tech_news_rss()
         if tech_news:
             for n in tech_news:
-                date_str = f"<span style='color:#7B4060;font-size:.78rem;'> — {n['date']}</span>" if n["date"] else ""
+                date_str = f"<span style='color:#8B0009;font-size:.78rem;'> — {n['date']}</span>" if n["date"] else ""
                 src = f"<span style='color:#999;font-size:.75rem;'> ({n['source']})</span>" if n["source"] else ""
                 link = n.get("link", "")
-                title_html = f"<a href='{link}' target='_blank' style='color:#1a0a12;font-weight:600;text-decoration:none;'>{n['title']}</a>" if link else f"<b>{n['title']}</b>"
+                title_html = f"<a href='{link}' target='_blank' style='color:#1a0000;font-weight:600;text-decoration:none;'>{n['title']}</a>" if link else f"<b>{n['title']}</b>"
                 st.markdown(
                     f"<div style='padding:.35rem 0;border-bottom:1px solid #f0e8ec;font-size:.84rem;'>"
                     f"↗ {title_html}{date_str}{src}</div>",
@@ -1452,7 +1317,7 @@ with tab4:
 
         if "generated_ideas" in st.session_state:
             st.markdown(
-                f"<div style='background:#fff;border:1px solid #E5C5D5;border-radius:12px;"
+                f"<div style='background:#fff;border:1px solid #FFCCCC;border-radius:12px;"
                 f"padding:1rem 1.2rem;font-size:.88rem;line-height:1.7;white-space:pre-wrap;'>"
                 f"{st.session_state['generated_ideas']}</div>",
                 unsafe_allow_html=True,
@@ -1469,33 +1334,33 @@ with tab4:
             key="ideas_manual",
         )
 
-    # ── Brief auto ──
-    st.markdown("---")
-    st.markdown("#### 📋 Récap automatique pour l'équipe")
+        # ── Brief auto ──
+        st.markdown("---")
+        st.markdown("#### 📋 Récap automatique pour l'équipe")
 
-    top3 = df.nlargest(3, "Vues")
-    top3_authors = df.groupby("Rédacteur")["Vues"].sum().nlargest(3).index.tolist()
-    best_cat_name = df.groupby("Catégorie")["Vues"].mean().idxmax()
-    best_type_name = df.groupby("Type_Label")["Vues"].mean().idxmax()
+        top3 = df.nlargest(3, "Vues")
+        top3_authors = df.groupby("Rédacteur")["Vues"].sum().nlargest(3).index.tolist()
+        best_cat_name = df.groupby("Catégorie")["Vues"].mean().idxmax()
+        best_type_name = df.groupby("Type_Label")["Vues"].mean().idxmax()
 
-    brief_lines = [
-        f"📊 Bilan semaine {datetime.strptime(w_start, '%Y-%m-%d').strftime('%d/%m')} → {datetime.strptime(w_end, '%Y-%m-%d').strftime('%d/%m/%Y')}",
-        "",
-        f"✅  {total_arts} articles publiés · {fmt(df['Vues'].sum())} vues au total",
-        f"📊  Vues moyennes : {fmt(int(df['Vues'].mean()))} / article",
-        "",
-        f"🏆  Top article : {top3.iloc[0]['Titre'][:70]} ({fmt(top3.iloc[0]['Vues'])} vues — {top3.iloc[0]['Rédacteur']})",
-        f"🥈  2e : {top3.iloc[1]['Titre'][:70]} ({fmt(top3.iloc[1]['Vues'])} vues)",
-        f"🥉  3e : {top3.iloc[2]['Titre'][:70]} ({fmt(top3.iloc[2]['Vues'])} vues)",
-        "",
-        f"📈  Catégorie phare : {best_cat_name}",
-        f"🎯  Format le + rentable : {best_type_name}",
-        f"✍️   Top rédacteurs : {', '.join(top3_authors)}",
-    ]
-    brief = "\n".join(brief_lines)
+        brief_lines = [
+            f"📊 Bilan semaine {datetime.strptime(w_start, '%Y-%m-%d').strftime('%d/%m')} → {datetime.strptime(w_end, '%Y-%m-%d').strftime('%d/%m/%Y')}",
+            "",
+            f"✅  {total_arts} articles publiés · {fmt(df['Vues'].sum())} vues au total",
+            f"📊  Vues moyennes : {fmt(int(df['Vues'].mean()))} / article",
+            "",
+            f"🏆  Top article : {top3.iloc[0]['Titre'][:70]} ({fmt(top3.iloc[0]['Vues'])} vues — {top3.iloc[0]['Rédacteur']})",
+            f"🥈  2e : {top3.iloc[1]['Titre'][:70]} ({fmt(top3.iloc[1]['Vues'])} vues)",
+            f"🥉  3e : {top3.iloc[2]['Titre'][:70]} ({fmt(top3.iloc[2]['Vues'])} vues)",
+            "",
+            f"📈  Catégorie phare : {best_cat_name}",
+            f"🎯  Format le + rentable : {best_type_name}",
+            f"✍️   Top rédacteurs : {', '.join(top3_authors)}",
+        ]
+        brief = "\n".join(brief_lines)
 
-    st.code(brief, language=None)
-    st.caption("Copiez ce texte pour votre email / Slack d'équipe.")
+        st.code(brief, language=None)
+        st.caption("Copiez ce texte pour votre email / Slack d'équipe.")
 
 # ─────────────────────────────────────────────
 # TAB 5 — HISTORIQUE
@@ -1511,12 +1376,11 @@ with tab5:
         # ── Filtre type ──
         filtre = st.radio(
             "Afficher",
-            ["Tout", "📅 Hebdo", "🗓️ Mensuel"],
+            ["📅 Hebdo", "🗓️ Mensuel"],
             horizontal=True,
             label_visibility="collapsed",
         )
-        if filtre != "Tout":
-            hist = hist[hist["Type"] == filtre].reset_index(drop=True)
+        hist = hist[hist["Type"] == filtre].sort_values("week_start").reset_index(drop=True)
 
         nb_weeks = len(hist)
 
@@ -1538,7 +1402,7 @@ with tab5:
         fig_h1 = px.area(
             hist, x="Période", y="Vues totales",
             title="Évolution des vues totales",
-            color_discrete_sequence=["#8E1050"],
+            color_discrete_sequence=["#E8000D"],
             markers=True,
         )
         fig_h1.update_layout(height=280, margin=dict(t=40, b=10), xaxis_tickangle=-20)
@@ -1551,7 +1415,7 @@ with tab5:
                 hist, x="Période", y="Articles",
                 title="Nombre d'articles par période",
                 color="Articles",
-                color_continuous_scale=["#F7EBF2", "#C4316B", "#5C0835"],
+                color_continuous_scale=["#FFE5E5", "#E8000D", "#8B0009"],
                 text="Articles",
             )
             fig_h2.update_traces(textposition="outside")
@@ -1562,7 +1426,7 @@ with tab5:
             fig_h3 = px.line(
                 hist, x="Période", y="Vues moyennes",
                 title="Vues moyennes par article",
-                color_discrete_sequence=["#C4316B"],
+                color_discrete_sequence=["#E8000D"],
                 markers=True,
             )
             fig_h3.update_layout(height=280, margin=dict(t=40, b=10), xaxis_tickangle=-20)
@@ -1592,10 +1456,10 @@ with tab5:
             for col, (label, c_val, p_val) in zip(cols_comp, comp_items):
                 badge = delta_badge(c_val, p_val)
                 col.markdown(
-                    f"<div style='background:#fff;border:1px solid #E5C5D5;border-top:4px solid #8E1050;"
+                    f"<div style='background:#fff;border:1px solid #FFCCCC;border-top:4px solid #E8000D;"
                     f"border-radius:12px;padding:1rem 1.2rem;text-align:center;'>"
-                    f"<div style='font-size:.72rem;font-weight:600;color:#7B4060;text-transform:uppercase;letter-spacing:.5px;'>{label}</div>"
-                    f"<div style='font-size:1.6rem;font-weight:800;color:#8E1050;margin:.3rem 0;'>{fmt(c_val)}</div>"
+                    f"<div style='font-size:.72rem;font-weight:600;color:#8B0009;text-transform:uppercase;letter-spacing:.5px;'>{label}</div>"
+                    f"<div style='font-size:1.6rem;font-weight:800;color:#E8000D;margin:.3rem 0;'>{fmt(c_val)}</div>"
                     f"<div style='font-size:.8rem;color:#999;'>vs {fmt(p_val)} &nbsp;{badge}</div>"
                     f"</div>",
                     unsafe_allow_html=True,
@@ -1607,7 +1471,7 @@ with tab5:
         display_hist = hist.drop(columns=["week_start", "filename"], errors="ignore").copy()
         display_hist["Vues totales"]  = display_hist["Vues totales"].apply(fmt)
         display_hist["Vues moyennes"] = display_hist["Vues moyennes"].apply(fmt)
-        st.dataframe(display_hist[::-1].reset_index(drop=True), use_container_width=True, hide_index=True)
+        st.dataframe(display_hist.reset_index(drop=True), use_container_width=True, hide_index=True)
 
         # ── Suppression ──
         st.markdown("---")

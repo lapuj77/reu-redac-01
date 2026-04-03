@@ -1,6 +1,6 @@
 @echo off
 title Dashboard Redaction
-cd /d "E:\dev\reu-redac"
+cd /d "E:\dev\reu-redac-01"
 
 echo.
 echo  ===================================
