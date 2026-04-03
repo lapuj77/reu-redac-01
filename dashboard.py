@@ -74,25 +74,31 @@ html, body, [class*="css"], .stMarkdown, .stText, button, input, label, p, td, t
     border-radius: 8px !important;
 }
 /* Boutons sidebar */
-[data-testid="stSidebar"] .stButton button {
-    background: #fff !important;
+[data-testid="stSidebar"] .stButton button,
+[data-testid="stSidebar"] .stButton > button,
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"],
+[data-testid="stSidebar"] [data-testid="stBaseButton-primary"] {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     color: #B50009 !important; font-weight: 700 !important;
-    border: 2px solid #fff !important;
+    border: 2px solid rgba(255,255,255,0.8) !important;
     border-radius: 8px !important;
     width: 100%; margin-top: .2rem;
     transition: all .15s;
 }
-[data-testid="stSidebar"] .stButton button:hover {
-    background: #fff0f0 !important; color: #8B0009 !important;
-    border-color: #ffcccc !important;
+[data-testid="stSidebar"] .stButton button:hover,
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"]:hover {
+    background: #fff0f0 !important; background-color: #fff0f0 !important;
+    color: #8B0009 !important;
 }
 [data-testid="stSidebar"] .stButton button *,
 [data-testid="stSidebar"] .stButton button p,
 [data-testid="stSidebar"] .stButton button span,
 [data-testid="stSidebar"] .stButton button div,
-[data-testid="stSidebar"] .stButton button label {
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"] *,
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"] p {
     color: #B50009 !important; font-weight: 700 !important;
-    background: transparent !important;
+    background: transparent !important; background-color: transparent !important;
 }
 /* Bouton "Browse files" du file uploader */
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
