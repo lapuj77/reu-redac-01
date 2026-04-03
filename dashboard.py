@@ -1005,25 +1005,26 @@ with tab1:
         fig2.update_layout(showlegend=False, height=420)
         st.plotly_chart(fig2, use_container_width=True)
 
-    # Timeline journalière — 7 jours lundi→dimanche complets
-    week_monday = datetime.strptime(w_start, "%Y-%m-%d")
-    week_monday -= timedelta(days=week_monday.weekday())  # recaler au lundi
-    all_days = pd.DataFrame({
-        "Date": [week_monday.date() + timedelta(days=i) for i in range(7)]
-    })
-    daily_raw = df.groupby(df["Date"].dt.date)["Vues"].sum().reset_index()
-    daily_raw.columns = ["Date", "Vues"]
-    daily = all_days.merge(daily_raw, on="Date", how="left").fillna(0)
-    daily["Vues"] = daily["Vues"].astype(int)
-    daily["Jour"] = daily["Date"].apply(lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m"))
-    fig3 = px.area(
-        daily, x="Jour", y="Vues",
-        title="Vues par jour (lundi → dimanche)",
-        color_discrete_sequence=["#E8000D"],
-        markers=True,
-    )
-    fig3.update_layout(height=240, margin=dict(t=40, b=20))
-    st.plotly_chart(fig3, use_container_width=True)
+    # Timeline journalière — semaine uniquement
+    if not is_monthly_file:
+        week_monday = datetime.strptime(w_start, "%Y-%m-%d")
+        week_monday -= timedelta(days=week_monday.weekday())
+        all_days = pd.DataFrame({
+            "Date": [week_monday.date() + timedelta(days=i) for i in range(7)]
+        })
+        daily_raw = df.groupby(df["Date"].dt.date)["Vues"].sum().reset_index()
+        daily_raw.columns = ["Date", "Vues"]
+        daily = all_days.merge(daily_raw, on="Date", how="left").fillna(0)
+        daily["Vues"] = daily["Vues"].astype(int)
+        daily["Jour"] = daily["Date"].apply(lambda d: JOURS_FR[d.strftime("%A")] + " " + d.strftime("%d/%m"))
+        fig3 = px.area(
+            daily, x="Jour", y="Vues",
+            title="Vues par jour (lundi → dimanche)",
+            color_discrete_sequence=["#E8000D"],
+            markers=True,
+        )
+        fig3.update_layout(height=240, margin=dict(t=40, b=20))
+        st.plotly_chart(fig3, use_container_width=True)
 
     # Top 10
     st.markdown("### 🏆 Top 10 articles de la semaine")
