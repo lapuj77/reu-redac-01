@@ -276,42 +276,59 @@ def save_config(data: dict):
 _config = load_config()
 
 CATEGORIES = {
-    "🎬 Pop Culture": [
-        "film", "série", "netflix", "anime", "one piece", "harry potter", "marvel",
-        "disney", "prime video", "streaming", "cinéma", "trailer", "bande-annonce",
-        "saison", "acteur", "live-action", "jojo", "avengers", "pixar", "thrash",
-        "disclosure", "man on fire", "raiponce", "rooster", "day one", "bass x",
-        "jumpers", "conan", "seigneur des anneaux", "malcolm",
+    "🔐 Cybersécurité": [
+        "fuite", "piratage", "cyberattaque", "hack", "phishing", "arnaque",
+        "malware", "virus", "ransomware", "dark web", "faille", "espionnage",
+        "botnet", "données volées", "données piratées", "données compromises",
+        "données exposées", "données sensibles", "fraude", "vulnérabilité",
+        "brèche", "chiffrement", "double authentification", "mots de passe",
+        "logiciel malveillant", "cheval de troie", "compte piraté", "piraté",
+        "cybermenace", "spyware", "credential", "credential stuffing",
     ],
-    "🎮 Jeux Vidéo": [
-        "xbox", "playstation", "steam", "nintendo", "switch", "jeu ", "jeux",
-        "pokémon", "pokemon", "fortnite", "mario", "gaming", "gamer", "ps5",
-        "fps", "rpg", "mmorpg", "bioshock", "overwatch", "game", "yoshi",
-        "pickmon", "pokopia", "resident evil", "life is strange", "blizzard",
-        "odyssey 3d", "steam machine", "tcg", "lego mario",
+    "📱 Smartphones & Apps": [
+        "iphone", "samsung galaxy", "android", "ios", "pixel", "xiaomi",
+        "nothing phone", "oppo", "oneplus", "smartphone", "téléphone",
+        "whatsapp", "telegram", "signal", "google messages", "imessage",
+        "application", "appli", "play store", "app store", "snapchat",
+        "instagram", "discord", "spotify", "tiktok", "android auto",
+        "google wallet", "google maps", "gmail", "google chrome",
     ],
-    "💻 Nouvelles Tech": [
-        "iphone", "apple", "samsung", "android", " ia ", "openai", "chatgpt",
-        "google", "microsoft", "windows", "mac", "macbook", "smartphone", "5g",
-        "puce", "processeur", "alexa", "siri", "grok", "meta ", "x money",
-        "oppo", "xiaomi", "nothing headphone", "dyson", "notion", "promptspy",
-        "rabbit ", "chrome", "android 16", "ssd", "nvidia", "amd", "photonique",
-        "leakbase", "macrohard", "moltbook",
+    "🤖 Intelligence Artificielle": [
+        " ia ", "intelligence artificielle", "chatgpt", "gpt", "openai",
+        "gemini", "mistral", "copilot", "deepseek", "notebooklm", "perplexity",
+        "claude ai", "llm", "génératif", "générative", "modèle de langage",
+        "agent ia", "ia générative", "grok", "midjourney", "dall-e",
+        "stable diffusion", "simone ai",
     ],
-    "🛒 Conso & Produits": [
-        "amazon", "cdiscount", "bon plan", "bonplan", "remise", "réduction",
-        "vente flash", "bouygues", "free ", "orange ", "sfr", "abonnement",
-        "forfait", "lego", "fnac", "darty", "boulanger", "airpods", "galaxy buds",
-        "navigo", "shein", "carburant", "essence", "voiture électrique", "tesla",
-        "renault", "byd", "denza", "zendure", "shokz", "ninja foodi", "ecoflow",
-        "sihoo", "iptv", "mondial relay", "canal+", "panneaux solaires",
+    "🚗 Auto & Mobilité": [
+        "voiture électrique", "véhicule électrique", "tesla", "renault",
+        "citroën", "peugeot", "bmw", "mercedes", "volkswagen", "audi",
+        "toyota", "hyundai", "kia", "byd", "xpeng", "mg4", "xiaomi su7",
+        "trottinette électrique", "vélo électrique", "borne de recharge",
+        "batterie voiture", "android automotive", "autonomie voiture",
+        "conduite autonome", "voiture connectée",
     ],
-    "🔬 Sciences": [
-        "espace", "nasa", "planète", "astéroïde", "étoile", "fusée", "satellite",
-        "scientifique", "recherche", "biologie", "chimie", "physique",
-        "découverte", "astronomie", "pieuvre", "cerveau", "adn", "neurone",
-        "artemis", "lune", "mars", "esa", "solaire", "imprimante 3d",
-        "disque dur moléculaire", "matériau", "quantique",
+    "📡 Télécom & Opérateurs": [
+        "free ", "orange ", "sfr", "bouygues", "forfait", "bbox",
+        "livebox", "freebox", "fibre optique", "fibre", "4g", "5g",
+        "opérateur", "box internet", "abonnement mobile", "sim", "esim",
+        "navigo", "forfait mobile", "roaming",
+    ],
+    "💻 Tech & Matériel": [
+        "windows", "macos", "mac ", "macbook", "ipad", "pc ", "ordinateur",
+        "laptop", "processeur", "puce", "nvidia", "amd", "intel", "apple silicon",
+        "ram", "ssd", "disque dur", "gpu", "cpu", "imprimante", "clavier",
+        "souris", "écran", "moniteur", "casque", "enceinte", "airpods",
+        "galaxy buds", "bluetooth", "wi-fi", "routeur", "google home",
+        "alexa", "assistant vocal", "switch 2", "nintendo", "playstation",
+        "xbox", "steam", "jeux vidéo",
+    ],
+    "🛒 Conso & Bons Plans": [
+        "bon plan", "bonplan", "remise", "réduction", "promo", "soldes",
+        "vente flash", "amazon", "fnac", "darty", "boulanger", "cdiscount",
+        "lego", "robot aspirateur", "roborock", "dyson", "shein", "temu",
+        "canal+", "netflix", "prime video", "streaming", "ecoflow",
+        "zendure", "panneaux solaires",
     ],
 }
 
@@ -936,15 +953,9 @@ st.html(
     </div>"""
 )
 
-if is_monthly_file:
-    tab1, tab2, tab3, tab5 = st.tabs(
-        ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "🗂️ Historique"]
-    )
-    tab4 = None
-else:
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(
-        ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "📅 Planning semaine", "🗂️ Historique"]
-    )
+tab1, tab2, tab3, tab4 = st.tabs(
+    ["📊 Vue d'ensemble", "👥 Stats par auteur", "📈 Tendances", "🗂️ Historique"]
+)
 
 # ─────────────────────────────────────────────
 # TAB 1 — VUE D'ENSEMBLE
@@ -1255,124 +1266,9 @@ with tab3:
     st.plotly_chart(fig_heat, use_container_width=True)
 
 # ─────────────────────────────────────────────
-# TAB 4 — PLANNING
+# TAB 4 — HISTORIQUE
 # ─────────────────────────────────────────────
-if tab4 is not None:
-    with tab4:
-        nw_start = datetime.strptime(w_end, "%Y-%m-%d") + timedelta(days=2)
-        nw_end = nw_start + timedelta(days=6)
-
-        st.markdown(
-            f"### 📅 Semaine du {nw_start.strftime('%d/%m/%Y')} au {nw_end.strftime('%d/%m/%Y')}"
-        )
-        st.markdown("---")
-
-        # ── Calendrier événements ──
-        st.markdown("#### 📅 Événements Tech & Gaming")
-        events = get_upcoming_events(nw_start.strftime("%Y-%m-%d"), lookahead_days=14)
-        if events:
-            for ev in events:
-                date_range = ev["start"] if ev["same_day"] else f"{ev['start']} → {ev['end']}"
-                badge_color = "#dc2626" if ev["urgent"] else "#E8000D"
-                badge = f"<span style='background:{badge_color};color:#fff;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;margin-left:.4rem;'>{ev['label']}</span>"
-                title_html = f"<a href='{ev['url']}' target='_blank' style='color:#E8000D;font-weight:700;text-decoration:none;'>{ev['name']}</a>" if ev["url"] else f"<b>{ev['name']}</b>"
-                st.markdown(
-                    f"<div style='background:#fff;border:1px solid #FFCCCC;border-radius:10px;padding:.6rem .9rem;margin:.3rem 0;'>"
-                    f"<div style='display:flex;justify-content:space-between;align-items:center;'>"
-                    f"<span>{title_html}{badge}</span>"
-                    f"<span style='font-size:.78rem;color:#8B0009;font-weight:600;'>{date_range}</span>"
-                    f"</div>"
-                    f"<div style='font-size:.78rem;color:#666;margin-top:.15rem;'>{ev['cat']} &nbsp;·&nbsp; {ev['desc']}</div>"
-                    f"</div>",
-                    unsafe_allow_html=True,
-                )
-        else:
-            st.info("Aucun événement majeur dans les 2 prochaines semaines.")
-
-        st.markdown("#### 📰 Actualités Tech & Lancements")
-        with st.spinner("Chargement…"):
-            tech_news = get_tech_news_rss()
-        if tech_news:
-            for n in tech_news:
-                date_str = f"<span style='color:#8B0009;font-size:.78rem;'> — {n['date']}</span>" if n["date"] else ""
-                src = f"<span style='color:#999;font-size:.75rem;'> ({n['source']})</span>" if n["source"] else ""
-                link = n.get("link", "")
-                title_html = f"<a href='{link}' target='_blank' style='color:#1a0000;font-weight:600;text-decoration:none;'>{n['title']}</a>" if link else f"<b>{n['title']}</b>"
-                st.markdown(
-                    f"<div style='padding:.35rem 0;border-bottom:1px solid #f0e8ec;font-size:.84rem;'>"
-                    f"↗ {title_html}{date_str}{src}</div>",
-                    unsafe_allow_html=True,
-                )
-        else:
-            st.info("Impossible de charger les actualités (vérifiez votre connexion).")
-        st.text_area("Notes complémentaires", placeholder="Autres événements, keynotes, annonces à couvrir…", height=70, label_visibility="collapsed", key="tech_notes")
-
-        st.markdown("#### 📈 Thèmes porteurs (issus de cette semaine)")
-        top3_cats = df.groupby("Catégorie")["Vues"].mean().nlargest(3)
-        for cat, moy in top3_cats.items():
-            st.markdown(f"- **{cat}** — {fmt(int(moy))} vues/article en moy.")
-
-        st.markdown("#### ✨ Idées d'articles")
-        if st.button("🤖 Générer des idées avec Claude", use_container_width=True):
-            top_arts_data = [
-                {"titre": row["Titre"][:80], "vues": fmt(row["Vues"])}
-                for _, row in df.nlargest(5, "Vues").iterrows()
-            ]
-            with st.spinner("Claude réfléchit…"):
-                ideas_text = generate_article_ideas(df, events, top_arts_data)
-            st.session_state["generated_ideas"] = ideas_text
-
-        if "generated_ideas" in st.session_state:
-            st.markdown(
-                f"<div style='background:#fff;border:1px solid #FFCCCC;border-radius:12px;"
-                f"padding:1rem 1.2rem;font-size:.88rem;line-height:1.7;white-space:pre-wrap;'>"
-                f"{st.session_state['generated_ideas']}</div>",
-                unsafe_allow_html=True,
-            )
-            if st.button("🗑️ Effacer", key="clear_ideas"):
-                del st.session_state["generated_ideas"]
-                st.rerun()
-
-        st.text_area(
-            "Notes libres",
-            placeholder="Vos propres idées…",
-            height=80,
-            label_visibility="collapsed",
-            key="ideas_manual",
-        )
-
-        # ── Brief auto ──
-        st.markdown("---")
-        st.markdown("#### 📋 Récap automatique pour l'équipe")
-
-        top3 = df.nlargest(3, "Vues")
-        top3_authors = df.groupby("Rédacteur")["Vues"].sum().nlargest(3).index.tolist()
-        best_cat_name = df.groupby("Catégorie")["Vues"].mean().idxmax()
-        best_type_name = df.groupby("Type_Label")["Vues"].mean().idxmax()
-
-        brief_lines = [
-            f"📊 Bilan semaine {datetime.strptime(w_start, '%Y-%m-%d').strftime('%d/%m')} → {datetime.strptime(w_end, '%Y-%m-%d').strftime('%d/%m/%Y')}",
-            "",
-            f"✅  {total_arts} articles publiés · {fmt(df['Vues'].sum())} vues au total",
-            f"📊  Vues moyennes : {fmt(int(df['Vues'].mean()))} / article",
-            "",
-            f"🏆  Top article : {top3.iloc[0]['Titre'][:70]} ({fmt(top3.iloc[0]['Vues'])} vues — {top3.iloc[0]['Rédacteur']})",
-            f"🥈  2e : {top3.iloc[1]['Titre'][:70]} ({fmt(top3.iloc[1]['Vues'])} vues)",
-            f"🥉  3e : {top3.iloc[2]['Titre'][:70]} ({fmt(top3.iloc[2]['Vues'])} vues)",
-            "",
-            f"📈  Catégorie phare : {best_cat_name}",
-            f"🎯  Format le + rentable : {best_type_name}",
-            f"✍️   Top rédacteurs : {', '.join(top3_authors)}",
-        ]
-        brief = "\n".join(brief_lines)
-
-        st.code(brief, language=None)
-        st.caption("Copiez ce texte pour votre email / Slack d'équipe.")
-
-# ─────────────────────────────────────────────
-# TAB 5 — HISTORIQUE
-# ─────────────────────────────────────────────
-with tab5:
+with tab4:
     st.markdown("### 🗂️ Historique")
 
     hist = load_archive_summaries()
